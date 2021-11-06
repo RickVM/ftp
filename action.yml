@@ -1,0 +1,22 @@
+name: "LFTP"
+description: 'Sync directories via ftp'
+inputs:
+  username:  # id of input
+    description: 'username for ftp'
+    required: true
+  password:  # id of input
+    description: 'password'
+    required: true
+  host:  # id of input
+    description: 'server url'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'rickvm/lftp'
+  args:
+    - ${{ inputs.who-to-greet }}
+
+branding:
+  icon: 'upload-cloud'  
+  color: 'green'
